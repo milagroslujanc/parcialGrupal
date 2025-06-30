@@ -98,9 +98,11 @@ export function CrearReserva() {
 
     const handleFechaChange = (e) => {
         const valor = e.target.value;
-        const dia = new Date(valor).getDay(); // 0 = domingo
+        // Convertir "YYYY-MM-DD" a fecha local correctamente
+        const [year, month, day] = valor.split('-').map(Number);
+        const selectedDate = new Date(year, month - 1, day); // Mes base 0
+        const dia = selectedDate.getDay(); // 0 = domingo
         const todayDate = new Date();
-        const selectedDate = new Date(valor);
         
 
         todayDate.setHours(0, 0, 0, 0);

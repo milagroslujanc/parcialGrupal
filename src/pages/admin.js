@@ -7,21 +7,14 @@ export function Admin() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchReservas() {
-            try {
-                const response = await fetch("http://localhost:8080/api/reservas");
-                if (response.ok) {
-                    const data = await response.json();
-                    setReservas(data);
-                } else {
-                    setReservas([]);
-                }
-            } catch {
-                setReservas([]);
-            }
-            setLoading(false);
+        // Leer reservas desde localStorage
+        const reservasGuardadas = localStorage.getItem("reservas");
+        if (reservasGuardadas) {
+            setReservas(JSON.parse(reservasGuardadas));
+        } else {
+            setReservas([]);
         }
-        fetchReservas();
+        setLoading(false);
     }, []);
 
     return (
