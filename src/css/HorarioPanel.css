@@ -1,0 +1,167 @@
+.horario-panel-container {
+  display: flex;
+  width: 100%;
+  min-height: 340px;
+  background: #fff;
+  border: 1px solid #cfcfcf;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #0001;
+}
+
+.horario-lista {
+  background: #7B946A;
+  color: #fff;
+  flex: 1.1;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+}
+
+.horario-titulo {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.horario-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.horario-item {
+  background: #fff2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.3rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.horario-item.activo {
+  background: #fff;
+  color: #222;
+  font-weight: bold;
+}
+
+.horario-item-titulo {
+  flex: 2;
+}
+
+.horario-item-hora {
+  flex: 1;
+  text-align: right;
+  font-size: 1rem;
+}
+
+.horario-item-arrow {
+  margin-left: 0.7rem;
+  font-size: 1.2rem;
+}
+
+.horario-detalle {
+  flex: 1.5;
+  background: #fff;
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 320px;
+  border-left: 1px solid #e0e0e0;
+}
+
+.detalle-panel {
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+}
+
+.detalle-titulo {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  color: #4B5B3A;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.detalle-desc {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.7rem;
+}
+
+.detalle-horario {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.detalle-btn {
+  background: #FFD600;
+  color: #222;
+  border: none;
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+  transition: background 0.2s;
+}
+
+.detalle-btn:hover {
+  background: #ffe066;
+}
+
+.detalle-img-wrap {
+  position: absolute;
+  top: 1.2rem;
+  right: -90px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #eee;
+  background: #fff;
+  box-shadow: 0 2px 8px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detalle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .horario-panel-container {
+    flex-direction: column;
+    min-width: 0;
+  }
+  .horario-lista, .horario-detalle {
+    min-width: 0;
+    width: 100%;
+    border-left: none;
+    padding: 1.2rem 1rem;
+  }
+  .detalle-img-wrap {
+    position: static;
+    margin: 1rem auto 0 auto;
+    right: unset;
+    top: unset;
+    display: block;
+  }
+}
