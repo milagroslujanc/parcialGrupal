@@ -1,24 +1,36 @@
   body {
       margin: 0;
-      //font-family: 'Inter', Arial, sans-serif;
       background: #fff;
       color: #101A24;
-
       background-image: url('../../public/tile_patron.png');
       background-repeat: repeat;
       background-size: 100px 100px;
       font-family: 'Itim', cursive;
-
     }
     header {
       width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #ffffff00;
       position: sticky;
-      top: 0;
+     
       z-index: 10;
+
     }
+
+    header > nav > div > a{
+      text-decoration: none ;
+      color: #000 ;
+      font-weight: bold;
+    }
+
     .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+    }
+    .navbar_home {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -28,10 +40,27 @@
     }
     .navbar-menu {
       display: flex;
-      gap: 2rem;
+      gap: 4rem;
       font-family: 'Itim', cursive;
       font-size: 1.2rem;
+      align-items: center;
     }
+
+    .navbar-search > div > input, .navbar-search > div > span{ 
+      background-color: #b3572500;
+      border-color: #b35725;
+    }
+
+    .navbar-search > div > input:focus{
+      background-color: #b3572509;
+    }
+
+    .navbar-search > div > input::placeholder{
+      color: #000;
+      font-style: italic;
+      font-weight: bold;
+    }
+
     .hero-section{
       display: flex;
       flex-direction: column;
@@ -42,6 +71,7 @@
       text-align: center;
       padding: 4rem 1rem 2rem 1rem;
       position: relative;
+      margin-top: -120px;
     }
     .hero-title {
       font-size: 2.5rem;
@@ -98,7 +128,7 @@
       margin-top: 2rem;
     }
     @media (max-width: 900px) {
-      .navbar, main { max-width: 100%; padding: 1rem; }
+      .navbar, .navbar_home, main { max-width: 100%; padding: 1rem; }
       .hero-title { font-size: 2rem; }
     }
     @media (max-width: 600px) {

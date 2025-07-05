@@ -4,12 +4,11 @@ import styles from '../css/style.module.css';
 import logo_medium from '../assets/logo_medium.png';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-export function Header() {
+export function Header_Home() {
     return (
         <header>
-            <nav className={styles.navbar}>
+            <nav className={styles.navbar_home}>
                 <div className={styles['navbar-menu']}>
-                    <img src={logo_medium} width={40} className="mb-2" />
                     <Link to="/">Menú</Link>
                     <Link to="/nosotros">Sobre Nosotros</Link>
                     <Link to="/reserva">Reservas</Link>

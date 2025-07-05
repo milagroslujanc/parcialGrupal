@@ -3,6 +3,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Header } from '../components/header.js'
 import { Main } from '../components/main.js'
 import { Footer } from "../components/footer.js"
+import { Header_Home } from "../components/header_home.js";
 
 export function Home(){
     const navigate = useNavigate()
@@ -13,7 +14,7 @@ export function Home(){
 
     return (
         <div>
-            <Header></Header>
+            <Header_Home></Header_Home>
             <Main></Main>
             <Footer></Footer>
         </div>

@@ -116,8 +116,31 @@
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 1.2rem;
+  text-decoration: none ;
+
   transition: background 0.2s;
 }
+
+.detalle-btn:hover , .detalle-btn-link:hover{
+  background: #FFD600;
+}
+
+
+.detalle-btn-link {
+  background: #FFD600;
+  color: #222;
+  border: none;
+  border-radius: 20px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+  text-decoration: none ;
+
+}
+
+
 
 .detalle-btn:hover {
   background: #ffe066;
