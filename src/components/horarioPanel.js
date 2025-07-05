@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "../css/HorarioPanel.css"; 
 import plato1 from "../assets/plato1.png";
 import plato2 from "../assets/plato2.png";
@@ -89,7 +91,7 @@ function HorarioDetalle({ evento }) {
         <b>Horarios:</b><br />{evento.horarios}
       </div>
       {evento.boton && (
-        <button className="detalle-btn">Reservar Ahora</button>
+        <button className="detalle-btn"><Link className="detalle-btn-link" to="/reserva">Reservar ahora</Link></button>
       )}
       <div className="detalle-img-wrap">
         <img className="detalle-img" src={evento.imagen} alt={evento.titulo} />

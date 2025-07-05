@@ -8,6 +8,8 @@ import plato2 from '../assets/plato2.png';   // causa
 import plato3 from '../assets/plato3.png';   // lomo saltado
 import fondo from '../assets/fondo_ajo.png'; // fondo decorativo
 import img_top_secundaria from '../assets/img_top_secundaria.png';
+import chef from '../assets/chef.png';
+
 
 export function SobreNosotros() {
     return (
@@ -28,7 +30,7 @@ export function SobreNosotros() {
             <div className="container-fluid">
                 <div className="row">
                     {/* Bebidas */}
-                    <div className="col-6">
+                    <div className="col-3">
                         <div className="d-flex align-items-center mb-3">
                             <img src={logo_medium} alt="Logo" width={90} className="me-3" />
                             <h4 className="fw-normal mb-0">BEBIDAS CON SABOR PERUANO</h4>
@@ -44,8 +46,19 @@ export function SobreNosotros() {
                         </div>
 
                     </div>
+
+                    <div className="col-6 d-flex flex-column justify-content-center align-items-center">
+                        <div className="mb-3 text-center">
+                            <h5 className="fw-bold mb-1">Chef Principal: Sara Connor</h5>
+                            <p style={{ maxWidth: "320px", fontSize: "1rem" }}>
+                                Nuestra chef ha recorrido las cocinas de los principales restaurantes del mundo, dando a conocer la gastronomía peruana y en los cuales siempre se ha destacado con excelencia y prestigio. Ahora de vuelta en su país, está siempre dispuesta a brindar la mejor experiencia a cada uno de los comensales del Sabor Peruano.
+                            </p>
+                        </div>
+                                            
+                        <img src={chef} alt="Chef" style={{ width: "300px", objectFit: "cover" }} />
+                    </div>
                     {/* Platos de fondo */}
-                    <div className="col-6">
+                    <div className="col-3">
                         <div className="d-flex align-items-center justify-content-end mb-3">
                             <h4 className="fw-normal mb-0 me-3">PLATOS DE FONDO</h4>
                             <img src={logo_medium} alt="Logo" width={90} />

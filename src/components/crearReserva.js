@@ -16,9 +16,11 @@ export function CrearReserva() {
     const [hora, setHora] = useState("");
     const [horariosDisponibles, setHorariosDisponibles] = useState([]);
     const [reservas, setReservas] = useState(() => {
-    const reservasGuardadas = localStorage.getItem("reservas");
+        const reservasGuardadas = localStorage.getItem("reservas");
         return reservasGuardadas ? JSON.parse(reservasGuardadas) : [];
     });
+    const [ultimaReserva, setUltimaReserva] = useState(null); // Nuevo estado
+
 
     // Cargar reservas desde localStorage al iniciar
     useEffect(() => {
@@ -136,6 +138,8 @@ export function CrearReserva() {
             email
         };
         setReservas([...reservas, nuevaReserva]);
+                setUltimaReserva(nuevaReserva); // Guardar la última reserva
+
         alert("Reserva registrada correctamente");
         // Opcional: limpiar campos
         setNombre("");
@@ -235,6 +239,23 @@ export function CrearReserva() {
                                     </div>
                                 </div>
                                 <button type="submit" className={styles.btnReservar}>RESERVAR</button>
+                                {/* Resumen de reserva */}
+                                {ultimaReserva && (
+                                    <div className="mt-4 p-3 border rounded bg-light">
+                                        <h5 className="mb-2 center  ">Resumen de tu reserva</h5>
+                                        <ul className="mb-2">
+                                            <li><strong>Nombre:</strong> {ultimaReserva.nombre}</li>
+                                            <li><strong>Celular:</strong> {ultimaReserva.celular}</li>
+                                            <li><strong>Correo:</strong> {ultimaReserva.email}</li>
+                                            <li><strong>Fecha:</strong> {ultimaReserva.fecha}</li>
+                                            <li><strong>Hora:</strong> {ultimaReserva.hora}</li>
+                                            <li><strong>Número de personas:</strong> {ultimaReserva.numeroPersonas}</li>
+                                        </ul>
+                                        <div className="text-danger fw-bold">
+                                            Si se desea cancelar la reserva llamar al número +51 923771834.
+                                        </div>
+                                    </div>
+                                )}                                
                             </div>
                         </div>
                     </div>
